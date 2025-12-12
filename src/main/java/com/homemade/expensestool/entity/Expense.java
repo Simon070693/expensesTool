@@ -3,6 +3,7 @@ package com.homemade.expensestool.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -10,7 +11,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "expenses")
+@Table(name = "expense")
 public class Expense {
 
     @Id
@@ -21,7 +22,7 @@ public class Expense {
     private String description;
 
     @Column(nullable = false)
-    private Double amount;
+    private BigDecimal amount;
 
     @Column(nullable = false)
     private LocalDate date;
