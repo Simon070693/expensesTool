@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+HELP.md
+
+# IDE
+.idea
+.vscode
+*.iml
+*.iws
+*.ipr
+
+# Build artifacts
+target/
+expenses-frontend/dist/
+expenses-frontend/node_modules/
+expenses-frontend/.angular/
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Test files
+src/test/
+**/*Test.java
+**/*Tests.java
+
+# Environment files
+.env
+.env.local
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+

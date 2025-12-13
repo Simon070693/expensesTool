@@ -12,20 +12,7 @@
     <artifactId>expensesTool</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>expensesTool</name>
-    <description>expensesTool</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+    <description>Full-stack expense management application with Spring Boot and Angular</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -45,6 +32,12 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -81,6 +74,51 @@
 
     <build>
         <plugins>
+            <!-- Frontend Maven Plugin - Builds Angular app before Java compilation -->
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>1.15.0</version>
+                <configuration>
+                    <workingDirectory>expenses-frontend</workingDirectory>
+                </configuration>
+                <executions>
+                    <!-- Install Node.js and npm -->
+                    <execution>
+                        <id>install node and npm</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>v20.19.0</nodeVersion>
+                            <npmVersion>10.9.0</npmVersion>
+                        </configuration>
+                    </execution>
+                    <!-- Install npm dependencies -->
+                    <execution>
+                        <id>npm install</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                    <!-- Build Angular application -->
+                    <execution>
+                        <id>npm run build</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run build</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

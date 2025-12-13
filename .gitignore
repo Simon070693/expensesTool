@@ -1,34 +1,146 @@
-HELP.md
+# ===========================================
+# Spring Boot / Maven
+# ===========================================
 target/
-.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.env
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
 
-### IntelliJ IDEA ###
-.idea
+# ===========================================
+# Angular / Node.js
+# ===========================================
+# Node modules
+node_modules/
+expenses-frontend/node_modules/
+expenses-frontend/node/
+
+# Angular build outputs
+expenses-frontend/dist/
+expenses-frontend/tmp/
+expenses-frontend/out-tsc/
+expenses-frontend/bazel-out/
+
+# Angular cache
+expenses-frontend/.angular/
+expenses-frontend/.angular/cache/
+
+# NPM/Yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ===========================================
+# IDE / Editor
+# ===========================================
+# IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
 
-### NetBeans ###
+# Eclipse
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+.factorypath
+.apt_generated
+.springBeans
+.sts4-cache/
+
+# NetBeans
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ===========================================
+# Build Artifacts
+# ===========================================
+build/
+dist/
+*.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===========================================
+# Environment & Secrets
+# ===========================================
+.env
+.env.local
+.env.*.local
+*.log
+*.swp
+*.swo
+*~
+
+# ===========================================
+# Testing
+# ===========================================
+coverage/
+.nyc_output/
+*.lcov
+test-results/
+expenses-frontend/coverage/
+expenses-frontend/libpeerconnection.log
+expenses-frontend/testem.log
+expenses-frontend/__screenshots__/
+
+# ===========================================
+# System Files
+# ===========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ===========================================
+# Miscellaneous
+# ===========================================
+*.class
+*.lock
+*.tmp
+*.temp
+.sass-cache/
+connect.lock
+typings/
+.cache/
+
+# Spring Boot static resources (generated from Angular build)
+src/main/resources/static/browser/
+src/main/resources/static/*.js
+src/main/resources/static/*.css
+src/main/resources/static/index.html
+src/main/resources/static/3rdpartylicenses.txt
+src/main/resources/static/prerendered-routes.json
+!src/main/resources/static/favicon.ico
+
+# Keep favicon in static
+!src/main/resources/static/favicon.ico
